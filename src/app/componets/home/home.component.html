@@ -1,0 +1,19 @@
+<!-- a classe row por padrao ja coloca os elementos de dentro da div na mesma linha -->
+<div class="row">
+  <!-- *ngFor{let card of Cards} pega o array transforma em um item, e agente pode ir acessando eles -->
+ <!-- card e a variavel criada para interar no array cards, essa variavel poderia ter outro nome -->
+ <!-- cards e a variavel do tipo array que esta no ts essa nao pode ter nome diferente -->
+  <!-- *ngFor e quem permite exibir na tela os cards contidos no array -->
+ <div *ngFor="let card of cards">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+      <!--  {{card.title}} exibe o titulo configurado em cada card-->
+      <div class="card-header">{{card.title}}</div>
+      <div class="card-body">
+        <!--  {{card.subTitle}} exibe o sub titulo configurado em cada card-->
+        <h5 class="card-title">{{card.subTitle}}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+    </div>
+  </div>
+</div>
