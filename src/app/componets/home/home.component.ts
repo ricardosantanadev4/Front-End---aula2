@@ -25,22 +25,25 @@ export class HomeComponent implements OnInit {
     // acessa variaveis da Classe Card e seta os valores tipo string
     card.title = "Saldo";
     card.subTitle = "Saldo em contas";
+    card.color="primary"
 
     // essas linhas cria um novo card
     let card1: Card = {};
     card1.title = "Saldo1";
     card1.subTitle = "Saldo em Conta 1"
+    card1.color = "success"
 
     // essas linhas cria um novo card
     let card2: Card = {}
     card2.title="Teste";
     card2.subTitle="Divida de teste";
+    card2.color="danger"
 
     // essas linhas cria um novo card
     let card3:Card ={};
     card3.title="Teste1";
     card3.subTitle="Divida de teste";
-
+    card3.color="info"
     // adiciona os objetos dentro do array
     // push() adiciona apos o ultimo objeto do array
     this.cards.push(card);

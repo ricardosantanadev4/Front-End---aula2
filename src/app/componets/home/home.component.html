@@ -5,7 +5,8 @@
  <!-- cards e a variavel do tipo array que esta no ts essa nao pode ter nome diferente -->
   <!-- *ngFor e quem permite exibir na tela os cards contidos no array -->
  <div *ngFor="let card of cards">
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+   <!-- bg-{{card.color}} seta a cor configura em cada card -->
+    <div class="card text-white bg-{{card.color}} mb-3" >
       <!--  {{card.title}} exibe o titulo configurado em cada card-->
       <div class="card-header">{{card.title}}</div>
       <div class="card-body">
