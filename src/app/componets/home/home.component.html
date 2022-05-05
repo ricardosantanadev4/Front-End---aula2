@@ -1,12 +1,12 @@
 <!-- a classe row por padrao ja coloca os elementos de dentro da div na mesma linha -->
 <div class="row">
   <!-- *ngFor{let card of Cards} pega o array transforma em um item, e agente pode ir acessando eles -->
- <!-- card e a variavel criada para interar no array cards, essa variavel poderia ter outro nome -->
- <!-- cards e a variavel do tipo array que esta no ts essa nao pode ter nome diferente -->
+  <!-- card e a variavel criada para interar no array cards, essa variavel poderia ter outro nome -->
+  <!-- cards e a variavel do tipo array que esta no ts essa nao pode ter nome diferente -->
   <!-- *ngFor e quem permite exibir na tela os cards contidos no array -->
- <div *ngFor="let card of cards">
-   <!-- bg-{{card.color}} seta a cor configura em cada card -->
-    <div class="card text-white bg-{{card.color}} mb-3" >
+  <div *ngFor="let card of cards">
+    <!-- bg-{{card.color}} seta a cor configura em cada card -->
+    <div class="card text-white bg-{{card.color}} mb-3">
       <!--  {{card.title}} exibe o titulo configurado em cada card-->
       <div class="card-header">{{card.title}}</div>
       <div class="card-body">
@@ -18,3 +18,23 @@
     </div>
   </div>
 </div>
+<!-- tabela -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let movimentacao of movimentacoes">
+    <tr>
+      <th scope="row">{{movimentacao.id}}</th>
+      <td>{{movimentacao.tipo}}</td>
+      <td>{{movimentacao.nome}}</td>
+      <td>{{movimentacao.valor}}</td>
+      <td>{{movimentacao.data}}</td>
+    </tr>
+  </tbody>
+</table>
