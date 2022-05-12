@@ -12,8 +12,10 @@
       <div class="card-body">
         <!--  {{card.subTitle}} exibe o sub titulo configurado em cada card-->
         <h5 class="card-title">{{card.subTitle}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+        <p class="card-text">
+          <!-- a inrrogacao e para garantir que o objeto nao venha nulo -->
+          {{slip?.slip?.advice}}
+        </p>
       </div>
     </div>
   </div>

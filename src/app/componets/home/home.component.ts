@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from 'src/app/models/card';
 import { Movimentacao } from 'src/app/models/movimentacao';
+import { Root } from 'src/app/models/slip';
+import { SlipService } from 'src/app/services/slip.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,7 +13,10 @@ export class HomeComponent implements OnInit {
   cards: Card[] = []
   movimentacoes: Movimentacao[] = []
 
-  constructor() { }
+  // importando o servico
+  constructor(private slipService: SlipService) { }
+
+  slip?: Root;
 
   // ngOnInit toda ves que iniciar o componet ele vai chamar o que estiver dentro dele
   ngOnInit(): void {
@@ -20,6 +25,7 @@ export class HomeComponent implements OnInit {
     console.log(this.cards);
     this.initMovimentacao();
     console.log(this.movimentacoes);
+    this.getSlip();
   }
 
   initCards() {
@@ -64,5 +70,13 @@ export class HomeComponent implements OnInit {
       //  insere o objeto gerado apos o ultimo elemento do array
       this.movimentacoes.push(movimentacao)
     }
+  }
+
+  // Chama o serviço para obtém todos os slips
+  getSlip() {
+    this.slipService.getSlip().subscribe((data: Root) => {
+      this.slip = data;
+      console.log(data)
+    });
   }
 }
